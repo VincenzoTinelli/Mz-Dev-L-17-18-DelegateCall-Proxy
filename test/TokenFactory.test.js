@@ -58,7 +58,7 @@ contract("TokenFactory", function (accounts) {
     );
     expect(await TokenContract1.owner()).to.be.equal(firstAccount);
     expect(
-      await tokenFactoryContract.getTokenDeplyed(Token1Address)
+      await tokenFactoryContract.getTokenDeployed(Token1Address)
     ).to.be.true;
 
     tx = await tokenFactoryContract.deployNewToken(
@@ -96,7 +96,7 @@ contract("TokenFactory", function (accounts) {
   });
 
   it("distrubute some tokens from TokenContract1", async function () {
-    await TokenContract1.transfer(secondAccount, toWei(1000), {
+    await TokenContract1.transfer(secondAccount, toWei(100000), {
       from: firstAccount,
     });
 
@@ -108,7 +108,7 @@ contract("TokenFactory", function (accounts) {
   });
 
   it("distrubute some tokens from TokenContract2", async function () {
-    await TokenContract2.transfer(firstAccount, toWei(500), {
+    await TokenContract2.transfer(firstAccount, toWei(200000), {
       from: secondAccount,
     });
 
