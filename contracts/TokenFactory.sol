@@ -23,8 +23,8 @@ contract TokenFactory is Ownable {
         return address(newToken);
     }
 
-    function getTokenAddress(uint256 idx) external view returns (address) {
-        return tokenContracts[idx];
+    function getTokenAddress(uint256 _idx) external view returns (address) {
+        return tokenContracts[_idx];
     }
 
     function getTokenCounter() external view returns (uint256) {
